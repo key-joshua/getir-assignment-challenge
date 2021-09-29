@@ -1,5 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/81b687b78280f00ca682/maintainability)](https://codeclimate.com/github/key-joshua/getir-assignment-challenge/maintainability)
 [![CircleCI](https://circleci.com/gh/key-joshua/getir-assignment-challenge/tree/main.svg?style=svg)](https://circleci.com/gh/key-joshua/getir-assignment-challenge/tree/main)
+[![Coverage Status](https://coveralls.io/repos/github/key-joshua/getir-assignment-challenge/badge.svg?branch=main)](https://coveralls.io/github/key-joshua/getir-assignment-challenge?branch=main)
 
 
 # BACKEND CHALLEGE
