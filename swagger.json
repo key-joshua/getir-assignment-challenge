@@ -9,7 +9,7 @@
     "contact": { "email": "k.joshua855@gmail.com" }
   },
 
-  "host": "https://getir-assignment-challenge.herokuapp.com",
+  "host": "getir-assignment-challenge.herokuapp.com",
   "basePath": "/api/v1",
   "tags": [
     {
