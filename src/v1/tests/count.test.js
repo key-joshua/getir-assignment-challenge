@@ -17,8 +17,8 @@ describe('TEST FETCH DATA API', async () => {
       .end((error, response) => {
         expect(response).to.have.status(OK);
         expect(response.body).to.be.a('object');
-        expect(response.body.message).to.be.a('string');
-        expect(response.body).to.have.property('data');
+        expect(response.body.msg).to.be.a('string');
+        expect(response.body).to.have.property('records');
         done(error);
       });
   });
@@ -30,7 +30,7 @@ describe('TEST FETCH DATA API', async () => {
       .end((error, response) => {
         expect(response).to.have.status(NOT_FOUND);
         expect(response.body).to.be.a('object');
-        expect(response.body.message).to.be.a('string');
+        expect(response.body.msg).to.be.a('string');
         done(error);
       });
   });

@@ -33,8 +33,8 @@ class UserController {
       return responseHelper.response(res);
     } catch (error) {
       return res.status(INTERNAL_SERVER_ERROR).json({
-        status: INTERNAL_SERVER_ERROR,
-        message: error.toString()
+        code: INTERNAL_SERVER_ERROR,
+        msg: error.toString()
       });
     }
   }

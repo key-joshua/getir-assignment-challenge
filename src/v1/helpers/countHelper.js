@@ -16,21 +16,32 @@ class CountHelper {
    */
   static async fetchData(body) {
     const data = await recordSchema.aggregate([
-      { $project: {
-        _id: 0,
-        key: 1,
-        createdAt: { $gte: body.startDate, $lt: body.endDate },
-        count: {
-          $cond: [{ $and: [
-            { $gte: ["$counts", body.minCount] },
-            { $lte: ["$counts", body.maxConut] }] },
-          "$counts",
-          0]
-        },
-      } },
-      { $group: {
-        totalCount: { $sum: '$count' }
-      } }]);
+      {
+        $match: {
+          createdAt: { $gt: new Date(body.startDate), $lt: new Date(body.endDate) }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          key: '$key',
+          createdAt: '$createdAt',
+          totalCount: {
+            $sum: {
+              $filter: {
+                input: "$counts",
+                as: "counts",
+                cond: {
+                  $and: [
+                    { $gte: ["$$counts", body.minCount] },
+                    { $lte: ["$$counts", body.maxCount] }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }]);
 
     return data;
   }

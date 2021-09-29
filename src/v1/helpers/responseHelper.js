@@ -39,14 +39,14 @@ class ResponseHelpers {
   static response(res) {
     if (this.type === 'success') {
       return res.status(this.statusCode).json({
-        status: this.statusCode,
-        message: this.message,
-        data: this.data,
+        code: 0,
+        msg: this.message,
+        records: this.data,
       });
     }
     return res.status(this.statusCode).json({
-      status: this.statusCode,
-      message: this.message,
+      code: this.statusCode,
+      msg: this.message,
     });
   }
 }
