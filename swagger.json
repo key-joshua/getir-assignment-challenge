@@ -1,0 +1,57 @@
+
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Getir Assignment Challenge.",
+    "version": "1.0.0",
+    "title": "Getir Assignment Challenge Backend",
+    "termsOfService": "https://github.com/key-joshua/getir-assignment-challenge/README.md ",
+    "contact": { "email": "k.joshua855@gmail.com" }
+  },
+
+  "host": "https://getir-assignment-challenge.herokuapp.com",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Count API",
+      "description": "Fetch Data By Specified Request"
+    }
+  ],
+  
+  "schemes": ["http","https"],
+  "consumes": ["application/json", "none"],
+  "produces": [ "application/json", "none"],
+  "paths": {
+    "/count/fetch-data": {
+      "post": {
+        "tags": [ "Count"],
+        "summary": "Fetch Data By Specified Request",
+        "description": "By the use of this POST endpoint, you can fetch data from database with specific request",
+        "responses": { "200": { "description": "Success." }, "404": { "description": "Not found." }},
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Request Payload",
+            "schema": { "$ref": "#/definitions/countSchema" }
+          }
+        ]
+      }
+    }
+  },
+
+  "definitions": {
+    "countSchema": {
+      "type": "object",
+      "properties": {
+        "startDate":  { "type": "string", "format": "date-time" },
+        "endDate":  { "type": "string", "format": "date-time" },
+        "minCount":  { "type": "integer", "required": true },
+        "maxCount": { "type": "integer", "required": true }
+      }
+    }
+  }
+}
+
+     
