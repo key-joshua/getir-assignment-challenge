@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/81b687b78280f00ca682/maintainability)](https://codeclimate.com/github/key-joshua/getir-assignment-challenge/maintainability)
+[![CircleCI](https://circleci.com/gh/key-joshua/getir-assignment-challenge/tree/main.svg?style=svg)](https://circleci.com/gh/key-joshua/getir-assignment-challenge/tree/main)
+
+
 # BACKEND CHALLEGE
 
 - This Backend Challenge
